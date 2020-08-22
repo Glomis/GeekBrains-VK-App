@@ -1,28 +1,33 @@
 //
-//  FriendsTableViewController.swift
+//  AvalibleGroupController.swift
 //  Own VK App
 //
-//  Created by Tatyana on 19.08.2020.
+//  Created by Tatyana on 22.08.2020.
 //  Copyright © 2020 Max&Co. All rights reserved.
 //
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class AvalibleGroupController: UITableViewController {
 
+   let demoGroups = [
+       Group(name: "Marvel", avatar: #imageLiteral(resourceName: "marvel"), description: nil, subscribers: 489500),
+       Group(name: "Swift Developers", avatar: #imageLiteral(resourceName: "swift"), description: nil, subscribers: 1430),
+       Group(name: "Anime Party", avatar: #imageLiteral(resourceName: "totoro"), description: nil, subscribers: 8700),
+       Group(name: "Active Sport", avatar: #imageLiteral(resourceName: "medal"), description: nil, subscribers: 127546)
+   ]
     
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return demoGroups.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "avaliableGroupCell", for: indexPath) as! GroupCell
 
-        // Configure the cell...
+        let group = demoGroups[indexPath.row]
+        cell.describeGroup(from: group)
 
         return cell
     }

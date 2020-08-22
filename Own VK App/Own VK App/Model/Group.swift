@@ -8,3 +8,9 @@
 
 import UIKit
 
+struct Group {
+    let name: String
+    let avatar: UIImage?
+    let description: String?
+    let subscribers: Int
+}

@@ -50,9 +50,9 @@ class LoginController: UIViewController {
        
        //MARK: IBActions
        @IBAction func enterBtnPressed(_ sender: Any) {
-           if loginTF.text != userLogin || passwordTF.text != userPassword {
-               showAlert()
-           }
+//           if loginTF.text != userLogin || passwordTF.text != userPassword {
+//               showAlert()
+//           }
        }
 }
 
