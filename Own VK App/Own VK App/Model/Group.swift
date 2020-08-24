@@ -14,3 +14,10 @@ struct Group {
     let description: String?
     let subscribers: Int
 }
+
+extension Group: Equatable {
+    static func != (lhs: Group , rhs: Group) -> Bool {
+        return lhs.name == rhs.name &&
+               lhs.avatar == rhs.avatar
+    }
+}

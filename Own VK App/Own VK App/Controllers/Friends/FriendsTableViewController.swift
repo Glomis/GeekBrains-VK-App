@@ -17,7 +17,7 @@ class FriendsTableViewController: UITableViewController {
         User(firstName: "Matthew", lastName: "McConaughey", bidthDay: nil, avatar: nil)
     ]
     
-    // MARK: - Table view data source
+    // MARK: - Table view Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -32,7 +32,7 @@ class FriendsTableViewController: UITableViewController {
     }
     
     
-    // Editing the table view.
+    //MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
@@ -40,15 +40,5 @@ class FriendsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-     
-     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

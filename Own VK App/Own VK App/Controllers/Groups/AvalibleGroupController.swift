@@ -11,13 +11,17 @@ import UIKit
 class AvalibleGroupController: UITableViewController {
 
    let demoGroups = [
+       Group(name: "18+", avatar: #imageLiteral(resourceName: "002-gender"), description: nil, subscribers: 325768),
+       Group(name: "Popular Films", avatar: #imageLiteral(resourceName: "003-video-player"), description: nil, subscribers: 500103),
+       Group(name: "Wild animals", avatar: #imageLiteral(resourceName: "001-lion"), description: nil, subscribers: 1052),
+       Group(name: "About YouTube", avatar: #imageLiteral(resourceName: "004-youtube"), description: nil, subscribers: 157554),
+       Group(name: "iOS Apps Free", avatar: #imageLiteral(resourceName: "005-app-store"), description: nil, subscribers: 5487),
        Group(name: "Marvel", avatar: #imageLiteral(resourceName: "marvel"), description: nil, subscribers: 489500),
        Group(name: "Swift Developers", avatar: #imageLiteral(resourceName: "swift"), description: nil, subscribers: 1430),
-       Group(name: "Anime Party", avatar: #imageLiteral(resourceName: "totoro"), description: nil, subscribers: 8700),
-       Group(name: "Active Sport", avatar: #imageLiteral(resourceName: "medal"), description: nil, subscribers: 127546)
+       Group(name: "Anime Party", avatar: #imageLiteral(resourceName: "totoro"), description: nil, subscribers: 8700)
    ]
     
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demoGroups.count
     }
@@ -31,51 +35,5 @@ class AvalibleGroupController: UITableViewController {
 
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

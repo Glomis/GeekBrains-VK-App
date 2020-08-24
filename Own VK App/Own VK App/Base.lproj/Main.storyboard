@@ -397,6 +397,7 @@
                                     <outlet property="groupAvatar" destination="0Kt-4v-0I6" id="uC2-hS-Goi"/>
                                     <outlet property="groupNameLabel" destination="mTt-os-ohj" id="hOQ-e4-l73"/>
                                     <outlet property="groupSubLabel" destination="F6l-xq-6LT" id="Kqq-hM-qaJ"/>
+                                    <segue destination="Xiu-La-Aj6" kind="unwind" identifier="addGroup" unwindAction="addGroup:" id="Wgf-DV-wGP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -408,6 +409,7 @@
                     <navigationItem key="navigationItem" id="Cge-Ya-fgb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogg-rP-Nsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Xiu-La-Aj6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3609" y="493"/>
         </scene>

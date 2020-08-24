@@ -15,7 +15,7 @@
 		4912CEA124F162EE003C7AFB /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912CEA024F162EE003C7AFB /* GroupCell.swift */; };
 		4912CEA324F16317003C7AFB /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912CEA224F16317003C7AFB /* MyGroupsController.swift */; };
 		4912CEA524F16356003C7AFB /* AvalibleGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912CEA424F16356003C7AFB /* AvalibleGroupController.swift */; };
-		4912CEA824F16448003C7AFB /* AvaliableGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912CEA724F16448003C7AFB /* AvaliableGroupCell.swift */; };
+		4912CEAC24F3983D003C7AFB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912CEAB24F3983D003C7AFB /* Alert.swift */; };
 		499C680124EC5ACE007C31D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C680024EC5ACE007C31D4 /* AppDelegate.swift */; };
 		499C680324EC5ACE007C31D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C680224EC5ACE007C31D4 /* SceneDelegate.swift */; };
 		499C680524EC5ACE007C31D4 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C680424EC5ACE007C31D4 /* LoginController.swift */; };
@@ -33,7 +33,7 @@
 		4912CEA024F162EE003C7AFB /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		4912CEA224F16317003C7AFB /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
 		4912CEA424F16356003C7AFB /* AvalibleGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvalibleGroupController.swift; sourceTree = "<group>"; };
-		4912CEA724F16448003C7AFB /* AvaliableGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliableGroupCell.swift; sourceTree = "<group>"; };
+		4912CEAB24F3983D003C7AFB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		499C67FD24EC5ACE007C31D4 /* Own VK App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Own VK App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		499C680024EC5ACE007C31D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499C680224EC5ACE007C31D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +60,7 @@
 			children = (
 				4903F3A224EDB9D100AD7707 /* User.swift */,
 				4903F3A424EDB9DB00AD7707 /* Group.swift */,
+				4912CEAB24F3983D003C7AFB /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -89,7 +90,6 @@
 			children = (
 				4912CEA024F162EE003C7AFB /* GroupCell.swift */,
 				4912CEA224F16317003C7AFB /* MyGroupsController.swift */,
-				4912CEA724F16448003C7AFB /* AvaliableGroupCell.swift */,
 				4912CEA424F16356003C7AFB /* AvalibleGroupController.swift */,
 			);
 			path = Groups;
@@ -202,8 +202,8 @@
 				499C680524EC5ACE007C31D4 /* LoginController.swift in Sources */,
 				499C680124EC5ACE007C31D4 /* AppDelegate.swift in Sources */,
 				4912CE9E24F13CBA003C7AFB /* FriendCell.swift in Sources */,
-				4912CEA824F16448003C7AFB /* AvaliableGroupCell.swift in Sources */,
 				4903F3A324EDB9D100AD7707 /* User.swift in Sources */,
+				4912CEAC24F3983D003C7AFB /* Alert.swift in Sources */,
 				4903F39F24EDB8F500AD7707 /* FriendsCollectionViewController.swift in Sources */,
 				4912CEA324F16317003C7AFB /* MyGroupsController.swift in Sources */,
 				499C680324EC5ACE007C31D4 /* SceneDelegate.swift in Sources */,

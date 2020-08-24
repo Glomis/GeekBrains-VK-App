@@ -10,14 +10,14 @@ import UIKit
 
 class MyGroupsController: UITableViewController {
     
-    let demoGroups = [
+    var demoGroups = [
         Group(name: "Marvel", avatar: #imageLiteral(resourceName: "marvel"), description: nil, subscribers: 489500),
         Group(name: "Swift Developers", avatar: #imageLiteral(resourceName: "swift"), description: nil, subscribers: 1430),
         Group(name: "Anime Party", avatar: #imageLiteral(resourceName: "totoro"), description: nil, subscribers: 8700),
         Group(name: "Active Sport", avatar: #imageLiteral(resourceName: "medal"), description: nil, subscribers: 127546)
     ]
     
-    // MARK: - Table view data sourc
+    // MARK: - Table View Data Sours
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demoGroups.count
     }
@@ -33,49 +33,31 @@ class MyGroupsController: UITableViewController {
     }
     
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    //MARK: - Table view Delegate
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            demoGroups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    //MARK: IB Actions
+    @IBAction func addGroup(_ unwindSegue: UIStoryboardSegue) {
+        guard unwindSegue.identifier == "addGroup" else { return }
+        
+        guard let avaliableGroupVC = unwindSegue.source as? AvalibleGroupController else { return }
+        
+        if let indexPath = avaliableGroupVC.tableView.indexPathForSelectedRow {
+            let group = avaliableGroupVC.demoGroups[indexPath.row]
+            if !demoGroups.contains(group) {
+                demoGroups.append(group)
+                tableView.reloadData()
+            } else {
+                Alert.showAlert(on: self, with: "Внимание!",
+                                massage: "Вы уже состоите в данной группе.")
+            }
+        }
+    }
     
 }
