@@ -30,10 +30,16 @@ class AvalibleGroupController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "avaliableGroupCell", for: indexPath) as! GroupCell
 
+        cell.groupAvatar.layer.cornerRadius = 30
         let group = demoGroups[indexPath.row]
         cell.describeGroup(from: group)
 
         return cell
+    }
+    
+    //MARK: - Table VIew Delegate
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
 
 }

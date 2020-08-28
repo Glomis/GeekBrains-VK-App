@@ -18,8 +18,8 @@ class LoginController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     //Variables
-    let userLogin = "admin"
-    let userPassword = "admin"
+    let userLogin = ""
+    let userPassword = ""
     
     
     override func viewDidLoad() {
@@ -40,9 +40,9 @@ class LoginController: UIViewController {
     
     //MARK: IBActions
     @IBAction func enterBtnPressed(_ sender: Any) {
-//        if loginTF.text != userLogin || passwordTF.text != userPassword {
-//            Alert.showAlert(on: self, with: "Ошибка", massage: "Проверьте правильность                            введенных данных")
-//        }
+        if loginTF.text != userLogin || passwordTF.text != userPassword {
+            Alert.showBisicAlert(on: self, with: "Ошибка", massage: "Проверьте правильность                            введенных данных")
+        }
     }
 }
 
