@@ -9,20 +9,23 @@
 import UIKit
 
 class FriendCell: UITableViewCell {
-
+    
     let user = User.self
     
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userFirstName: UILabel!
     @IBOutlet weak var userLastName: UILabel!
     
+    override func layoutSubviews() {
+        userAvatar.layer.cornerRadius = 30
+    }
+    
     func describeUser(from user: User) {
         userFirstName.text = user.firstName
         userLastName.text = user.lastName
-        if user.avatar != nil {
-            userAvatar.image = user.avatar
-        } else {
-            userAvatar.image = #imageLiteral(resourceName: "user")
-        }
+
+        guard user.avatar != nil else { return userAvatar.image = #imageLiteral(resourceName: "user") }
+        userAvatar.image = user.avatar
     }
 }

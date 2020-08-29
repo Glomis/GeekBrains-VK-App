@@ -26,6 +26,7 @@ class MyGroupsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
         
+        cell.groupAvatar.layer.cornerRadius = 30
         let group = demoGroups[indexPath.row]
         cell.describeGroup(from: group)
         
@@ -41,6 +42,10 @@ class MyGroupsController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
     
     //MARK: IB Actions
     @IBAction func addGroup(_ unwindSegue: UIStoryboardSegue) {
@@ -52,12 +57,13 @@ class MyGroupsController: UITableViewController {
             let group = avaliableGroupVC.demoGroups[indexPath.row]
             if !demoGroups.contains(group) {
                 demoGroups.append(group)
-                tableView.reloadData()
+               
             } else {
-                Alert.showAlert(on: self, with: "Внимание!",
+                Alert.showBisicAlert(on: self, with: "Внимание!",
                                 massage: "Вы уже состоите в данной группе.")
             }
         }
+         tableView.reloadData()
     }
     
 }

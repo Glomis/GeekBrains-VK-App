@@ -12,5 +12,6 @@ struct User {
     let firstName: String
     let lastName: String
     let bidthDay: Date?
-    let avatar: UIImage?
+    var avatar: UIImage?
+    var photos: [UIImage?]
 }

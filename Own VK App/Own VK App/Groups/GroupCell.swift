@@ -19,8 +19,9 @@ class GroupCell: UITableViewCell {
     func describeGroup(from group: Group) {
         groupNameLabel.text = group.name
         groupSubLabel.text = "Number of subscribers: \(group.subscribers)"
-        if group.avatar != nil {
-            groupAvatar.image = group.avatar
-        }
+        
+        guard group.avatar != nil else { return groupAvatar.image = #imageLiteral(resourceName: "man-2") }
+        groupAvatar.image = group.avatar
     }
+    
 }
