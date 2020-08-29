@@ -18,17 +18,16 @@ class LoginController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     //Variables
-    let userLogin = "123"
-    let userPassword = "123"
+    let userLogin = ""
+    let userPassword = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        enterBtn.layer.cornerRadius = 12
-        
         loginTF.delegate = self
         passwordTF.delegate = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
@@ -43,10 +42,11 @@ class LoginController: UIViewController {
     //MARK: IBActions
     @IBAction func enterBtnPressed(_ sender: Any) {
         if loginTF.text != userLogin || passwordTF.text != userPassword {
-            Alert.showBisicAlert(on: self, with: "Ошибка", massage: "Проверьте правильность                            введенных данных")
+            Alert.showBasicAlert(on: self, with: "Ошибка", massage: "Проверьте правильность                            введенных данных")
         }
     }
 }
+
 
 extension LoginController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

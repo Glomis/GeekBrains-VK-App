@@ -45,7 +45,7 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtS-N5-q6u">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtS-N5-q6u" customClass="CustomButton" customModule="Own_VK_App" customModuleProvider="target">
                                         <rect key="frame" x="92.666666666666686" y="413" width="150" height="45"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -361,7 +361,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzV-oF-Pfb" customClass="AvatarView" customModule="Own_VK_App" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="5" width="60" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-cr-bwh">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-cr-bwh">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         </imageView>
                                                     </subviews>
@@ -457,7 +457,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozS-nt-jik" customClass="AvatarView" customModule="Own_VK_App" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="5" width="60" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hro-zz-Cf9">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hro-zz-Cf9">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         </imageView>
                                                     </subviews>

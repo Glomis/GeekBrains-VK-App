@@ -9,19 +9,18 @@
 import UIKit
 
 class FriendsCollectionViewController: UICollectionViewController {
-
+    
     var user: User!
     
     // MARK: Collection View Data Source
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if user.photos == [nil] { return 0 }
-        return user.photos.count
+        return user.photos?.count ?? 0
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendsCollectionCell", for: indexPath) as! FriendPhotoCollectionViewCell
-    
-        cell.friendPhoto.image = user.photos[indexPath.row]
+        
+        cell.friendPhoto.image = user.photos![indexPath.row]
         return cell
     }
     

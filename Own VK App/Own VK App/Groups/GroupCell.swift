@@ -10,11 +10,12 @@ import UIKit
 
 class GroupCell: UITableViewCell {
     
-    let group = Group.self
-    
     @IBOutlet weak var groupAvatar: UIImageView!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupSubLabel: UILabel!
+    
+    let group = Group.self
+    
     
     func describeGroup(from group: Group) {
         groupNameLabel.text = group.name

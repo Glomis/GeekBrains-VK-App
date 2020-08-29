@@ -1,33 +1,33 @@
 //
-//  AvatarView.swift
+//  CustomButton.swift
 //  Own VK App
 //
-//  Created by Tatyana on 26.08.2020.
+//  Created by Tatyana on 29.08.2020.
 //  Copyright © 2020 Max&Co. All rights reserved.
 //
 
 import UIKit
 
-class AvatarView: UIView {
+class CustomButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setViewShadow()
-        layer.cornerRadius = frame.height / 2
+        setShadow()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setViewShadow()
-        layer.cornerRadius = frame.height / 2
+        setShadow()
     }
     
-    func setViewShadow() {
+    
+    func setShadow() {
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 6.0, height: 4.0)
+        layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         layer.shadowRadius = 8
-        layer.shadowOpacity = 0.8
+        layer.shadowOpacity = 0.5
         clipsToBounds = true
         layer.masksToBounds = false
+        layer.cornerRadius = 12
     }
 }

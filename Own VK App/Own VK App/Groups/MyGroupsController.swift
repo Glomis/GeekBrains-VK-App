@@ -10,6 +10,8 @@ import UIKit
 
 class MyGroupsController: UITableViewController {
     
+    
+    // Variables
     var demoGroups = [
         Group(name: "Marvel", avatar: #imageLiteral(resourceName: "marvel"), description: nil, subscribers: 489500),
         Group(name: "Swift Developers", avatar: #imageLiteral(resourceName: "swift"), description: nil, subscribers: 1430),
@@ -26,7 +28,6 @@ class MyGroupsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
         
-        cell.groupAvatar.layer.cornerRadius = 30
         let group = demoGroups[indexPath.row]
         cell.describeGroup(from: group)
         
@@ -57,13 +58,13 @@ class MyGroupsController: UITableViewController {
             let group = avaliableGroupVC.demoGroups[indexPath.row]
             if !demoGroups.contains(group) {
                 demoGroups.append(group)
-               
+                
             } else {
-                Alert.showBisicAlert(on: self, with: "Внимание!",
-                                massage: "Вы уже состоите в данной группе.")
+                Alert.showBasicAlert(on: self, with: "Внимание!",
+                                     massage: "Вы уже состоите в данной группе.")
             }
         }
-         tableView.reloadData()
+        tableView.reloadData()
     }
     
 }

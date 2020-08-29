@@ -10,6 +10,7 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
+    // Variables
     var users = [
         User(firstName: "Keanu", lastName: "Reeves", bidthDay: nil, avatar: #imageLiteral(resourceName: "hipster"), photos: [#imageLiteral(resourceName: "KeanuReeves1"), #imageLiteral(resourceName: "KeanuReeves2"), #imageLiteral(resourceName: "keanu3"), #imageLiteral(resourceName: "keanu4"), #imageLiteral(resourceName: "keanu5")]),
         User(firstName: "John", lastName: "Travolta", bidthDay: nil, avatar: #imageLiteral(resourceName: "beard"), photos: [#imageLiteral(resourceName: "Travolta3"), #imageLiteral(resourceName: "Travolta2"), #imageLiteral(resourceName: "Travolta1")]),
@@ -41,6 +42,11 @@ class FriendsTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showFriendPhotos" {
             
@@ -53,9 +59,5 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showFriendPhotos", sender: self)
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return 90
-       }
     
 }
