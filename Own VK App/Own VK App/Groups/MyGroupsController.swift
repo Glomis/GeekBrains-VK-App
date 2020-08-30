@@ -67,13 +67,4 @@ class MyGroupsController: UITableViewController {
         tableView.reloadData()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showAllGroups" {
-//           let av = segue.destination as! AvalibleGroupController
-//            guard let path = tableView.indexPathForSelectedRow else { return }
-//            let group = demoGroups[path.row]
-//            av.name = group.name
-//        }
-//    }
-    
 }
