@@ -16,8 +16,7 @@ class FriendPhotoCollectionViewCell: UICollectionViewCell {
     
     var subscribeCounter = 0
     
-    
-    @IBAction func likeBtnClicked(_ sender: UIButton) {
+    func checkSubscribers() {
         if likeBtn.tag == 0 {
             likeBtn.setImage(UIImage(named: "heart"), for: .normal)
             subscribeCounter += 1
@@ -27,7 +26,16 @@ class FriendPhotoCollectionViewCell: UICollectionViewCell {
             likeBtn.setImage(UIImage(named: "heart-2"), for: .normal)
             subscribeCounter -= 1
             likeCountLabel.text = "\(subscribeCounter)"
-            sender.tag = 0
+            likeBtn.tag = 0
         }
+        
+        guard subscribeCounter == 0 else { return likeCountLabel.textColor = .red }
+        likeCountLabel.textColor = .blue
+    }
+    
+    //MARK: IB Actions
+    @IBAction func likeBtnClicked(_ sender: UIButton) {
+        checkSubscribers()
     }
 }
+

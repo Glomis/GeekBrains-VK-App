@@ -28,6 +28,10 @@ class LoginController: UIViewController {
         loginTF.delegate = self
         passwordTF.delegate = self
         
+        view.setGradient(colorOne: #colorLiteral(red: 0.5367406457, green: 0.8022211858, blue: 0.8358970801, alpha: 1), colorTwo: #colorLiteral(red: 0.4192527837, green: 0.6304774073, blue: 1, alpha: 1))
+        enterBtn.layer.cornerRadius = 12
+        enterBtn.setShadow()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     

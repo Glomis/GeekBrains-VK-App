@@ -11,7 +11,12 @@ import UIKit
 class FriendsCollectionViewController: UICollectionViewController {
     
     var user: User!
+    var name = ""
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = name
+    }
     // MARK: Collection View Data Source
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return user.photos?.count ?? 0

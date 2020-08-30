@@ -17,6 +17,12 @@ class FriendsTableViewController: UITableViewController {
         User(firstName: "Johnny", lastName: "Depp", bidthDay: nil, avatar: #imageLiteral(resourceName: "man"), photos: [#imageLiteral(resourceName: "Johnny3"), #imageLiteral(resourceName: "Jonny2"), #imageLiteral(resourceName: "Jonny1")]),
         User(firstName: "Matthew", lastName: "McConaughey", bidthDay: nil, avatar: #imageLiteral(resourceName: "profile"), photos: [#imageLiteral(resourceName: "Mat1"), #imageLiteral(resourceName: "Mat2"), #imageLiteral(resourceName: "Mat3")])
     ]
+     var name = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        UINavigationBar.ti
+    }
     
     // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,8 +58,13 @@ class FriendsTableViewController: UITableViewController {
             
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            let destination = segue.destination as! FriendsCollectionViewController
-            destination.user = users[indexPath.row]
+            guard let destination = segue.destination as? FriendsCollectionViewController else {
+                return
+            }
+            let user = users[indexPath.row]
+            
+            destination.user = user
+            destination.name = "\(user.firstName) \(user.lastName)"
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
