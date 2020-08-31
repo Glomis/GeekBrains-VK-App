@@ -19,10 +19,6 @@ class FriendsTableViewController: UITableViewController {
     ]
      var name = ""
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        UINavigationBar.ti
-    }
     
     // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

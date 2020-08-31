@@ -29,7 +29,7 @@ class MyGroupsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
         
         let group = demoGroups[indexPath.row]
-        cell.describeGroup(from: group)
+        cell.configure(from: group)
         
         return cell
     }

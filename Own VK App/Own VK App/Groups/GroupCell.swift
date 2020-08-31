@@ -14,10 +14,8 @@ class GroupCell: UITableViewCell {
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupSubLabel: UILabel!
     
-    let group = Group.self
     
-    
-    func describeGroup(from group: Group) {
+    func configure(from group: Group) {
         groupNameLabel.text = group.name
         groupSubLabel.text = "Number of subscribers: \(group.subscribers)"
         
