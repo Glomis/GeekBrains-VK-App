@@ -9,13 +9,25 @@
 import UIKit
 
 class AvatarView: UIView {
-
-    override func layoutSubviews() {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setViewShadow()
         layer.cornerRadius = frame.height / 2
-        layer.shadowOpacity = 0.6
-        layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowRadius = 3
-        layer.shadowOffset = CGSize(width: 5, height: 5)
     }
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setViewShadow()
+        layer.cornerRadius = frame.height / 2
+    }
+    
+    func setViewShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 6.0, height: 4.0)
+        layer.shadowRadius = 8
+        layer.shadowOpacity = 0.8
+        clipsToBounds = true
+        layer.masksToBounds = false
+    }
 }

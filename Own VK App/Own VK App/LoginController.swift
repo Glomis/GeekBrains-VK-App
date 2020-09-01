@@ -18,17 +18,20 @@ class LoginController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     //Variables
-    let userLogin = "123"
-    let userPassword = "123"
+    let userLogin = ""
+    let userPassword = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        enterBtn.layer.cornerRadius = 12
-        
         loginTF.delegate = self
         passwordTF.delegate = self
+        
+        view.setGradient(colorOne: #colorLiteral(red: 0.5367406457, green: 0.8022211858, blue: 0.8358970801, alpha: 1), colorTwo: #colorLiteral(red: 0.4192527837, green: 0.6304774073, blue: 1, alpha: 1))
+        enterBtn.layer.cornerRadius = 12
+        enterBtn.setShadow()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
@@ -43,10 +46,11 @@ class LoginController: UIViewController {
     //MARK: IBActions
     @IBAction func enterBtnPressed(_ sender: Any) {
         if loginTF.text != userLogin || passwordTF.text != userPassword {
-            Alert.showBisicAlert(on: self, with: "Ошибка", massage: "Проверьте правильность                            введенных данных")
+            Alert.showBasicAlert(on: self, with: "Ошибка", massage: "Проверьте правильность                            введенных данных")
         }
     }
 }
+
 
 extension LoginController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

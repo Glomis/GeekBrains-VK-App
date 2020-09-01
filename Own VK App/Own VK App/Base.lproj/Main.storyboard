@@ -229,12 +229,11 @@
             <objects>
                 <navigationController id="gUa-I9-tXb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="friendship" id="lG4-Oh-ifV"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tmx-Xd-Zro">
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="Tmx-Xd-Zro">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.53674064570000002" green="0.80222118580000001" blue="0.83589708009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -361,7 +360,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzV-oF-Pfb" customClass="AvatarView" customModule="Own_VK_App" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="5" width="60" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-cr-bwh">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-cr-bwh">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         </imageView>
                                                     </subviews>
@@ -409,7 +408,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="5WN-yO-SfD">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="pEq-zq-6IP" kind="show" id="IFU-rw-fIZ"/>
+                                <segue destination="pEq-zq-6IP" kind="show" identifier="showAllGroups" id="IFU-rw-fIZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -418,7 +417,7 @@
             </objects>
             <point key="canvasLocation" x="2781.5999999999999" y="492.85714285714289"/>
         </scene>
-        <!--Avalible Group Controller-->
+        <!--All Groups-->
         <scene sceneID="3j7-fe-Yjv">
             <objects>
                 <tableViewController id="pEq-zq-6IP" customClass="AvalibleGroupController" customModule="Own_VK_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -457,7 +456,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozS-nt-jik" customClass="AvatarView" customModule="Own_VK_App" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="5" width="60" height="60"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hro-zz-Cf9">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hro-zz-Cf9">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         </imageView>
                                                     </subviews>
@@ -503,7 +502,7 @@
                             <outlet property="delegate" destination="pEq-zq-6IP" id="WGS-zv-gkL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Cge-Ya-fgb"/>
+                    <navigationItem key="navigationItem" title="All Groups" id="Cge-Ya-fgb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogg-rP-Nsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Xiu-La-Aj6" userLabel="Exit" sceneMemberID="exit"/>
@@ -516,10 +515,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l8L-ci-oGD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Groups" image="meeting" id="3VG-A5-6mG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1iU-Jo-JnJ">
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="1iU-Jo-JnJ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.53674064570000002" green="0.80222118580000001" blue="0.83589708009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

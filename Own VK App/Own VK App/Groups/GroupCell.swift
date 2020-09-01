@@ -10,13 +10,12 @@ import UIKit
 
 class GroupCell: UITableViewCell {
     
-    let group = Group.self
-    
     @IBOutlet weak var groupAvatar: UIImageView!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupSubLabel: UILabel!
     
-    func describeGroup(from group: Group) {
+    
+    func configure(from group: Group) {
         groupNameLabel.text = group.name
         groupSubLabel.text = "Number of subscribers: \(group.subscribers)"
         

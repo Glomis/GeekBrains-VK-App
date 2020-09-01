@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Alert {
-    static func showBisicAlert(on vc: UIViewController, with tittle: String, massage: String) {
+    static func showBasicAlert(on vc: UIViewController, with tittle: String, massage: String) {
         let alert = UIAlertController(title: tittle, message: massage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(okAction)
