@@ -21,7 +21,7 @@ class FriendCell: UITableViewCell {
         userAvatar.layer.cornerRadius = 30
     }
     
-    func describeUser(from user: User) {
+    func configure(from user: User) {
         userFirstName.text = user.firstName
         userLastName.text = user.lastName
 

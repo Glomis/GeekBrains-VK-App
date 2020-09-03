@@ -78,8 +78,7 @@
 		4912CE9F24F16297003C7AFB /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				4912CE9D24F13CBA003C7AFB /* FriendCell.swift */,
-				49209E2D24F7C857005D856F /* FriendPhotoCollectionViewCell.swift */,
+				4917723D2500CE4B00A19042 /* Cells */,
 				4903F3A024EDB90A00AD7707 /* FriendsTableViewController.swift */,
 				4903F39E24EDB8F500AD7707 /* FriendsCollectionViewController.swift */,
 			);
@@ -94,6 +93,15 @@
 				4912CEA424F16356003C7AFB /* AvalibleGroupController.swift */,
 			);
 			path = Groups;
+			sourceTree = "<group>";
+		};
+		4917723D2500CE4B00A19042 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4912CE9D24F13CBA003C7AFB /* FriendCell.swift */,
+				49209E2D24F7C857005D856F /* FriendPhotoCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		49209E2C24F7BAD4005D856F /* View */ = {

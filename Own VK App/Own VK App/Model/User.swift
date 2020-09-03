@@ -14,4 +14,8 @@ struct User {
     let bidthDay: Date?
     var avatar: UIImage?
     var photos: [UIImage]?
+    
+    var tittleFirstLetter: String {
+        return String(firstName.first!)
+    }
 }
