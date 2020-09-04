@@ -11,6 +11,8 @@
 		4903F3A124EDB90A00AD7707 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903F3A024EDB90A00AD7707 /* FriendsTableViewController.swift */; };
 		4903F3A324EDB9D100AD7707 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903F3A224EDB9D100AD7707 /* User.swift */; };
 		4903F3A524EDB9DB00AD7707 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903F3A424EDB9DB00AD7707 /* Group.swift */; };
+		4905A44A250246CB00CF0D78 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905A449250246CB00CF0D78 /* UserList.swift */; };
+		4905A44C2502470300CF0D78 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905A44B2502470300CF0D78 /* Data.swift */; };
 		49070A4F24FBC41D00D2A668 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49070A4E24FBC41D00D2A668 /* Gradient.swift */; };
 		4912CE9E24F13CBA003C7AFB /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912CE9D24F13CBA003C7AFB /* FriendCell.swift */; };
 		4912CEA124F162EE003C7AFB /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912CEA024F162EE003C7AFB /* GroupCell.swift */; };
@@ -34,6 +36,8 @@
 		4903F3A024EDB90A00AD7707 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		4903F3A224EDB9D100AD7707 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4903F3A424EDB9DB00AD7707 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		4905A449250246CB00CF0D78 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		4905A44B2502470300CF0D78 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		49070A4E24FBC41D00D2A668 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4912CE9D24F13CBA003C7AFB /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		4912CEA024F162EE003C7AFB /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				4903F3A224EDB9D100AD7707 /* User.swift */,
+				4905A449250246CB00CF0D78 /* UserList.swift */,
 				4903F3A424EDB9DB00AD7707 /* Group.swift */,
 				4912CEAB24F3983D003C7AFB /* Alert.swift */,
 			);
@@ -137,6 +142,7 @@
 				499C680024EC5ACE007C31D4 /* AppDelegate.swift */,
 				499C680224EC5ACE007C31D4 /* SceneDelegate.swift */,
 				499C680424EC5ACE007C31D4 /* LoginController.swift */,
+				4905A44B2502470300CF0D78 /* Data.swift */,
 				49209E2C24F7BAD4005D856F /* View */,
 				4903F3A624EDB9E500AD7707 /* Model */,
 				4912CE9F24F16297003C7AFB /* Friends */,
@@ -230,11 +236,13 @@
 				4960E1F024F65CCE009B9584 /* AvatarView.swift in Sources */,
 				4912CE9E24F13CBA003C7AFB /* FriendCell.swift in Sources */,
 				4903F3A324EDB9D100AD7707 /* User.swift in Sources */,
+				4905A44A250246CB00CF0D78 /* UserList.swift in Sources */,
 				4912CEAC24F3983D003C7AFB /* Alert.swift in Sources */,
 				4903F39F24EDB8F500AD7707 /* FriendsCollectionViewController.swift in Sources */,
 				4912CEA324F16317003C7AFB /* MyGroupsController.swift in Sources */,
 				499C680324EC5ACE007C31D4 /* SceneDelegate.swift in Sources */,
 				4912CEA524F16356003C7AFB /* AvalibleGroupController.swift in Sources */,
+				4905A44C2502470300CF0D78 /* Data.swift in Sources */,
 				4903F3A124EDB90A00AD7707 /* FriendsTableViewController.swift in Sources */,
 				49209E2B24F777A7005D856F /* BackView.swift in Sources */,
 			);

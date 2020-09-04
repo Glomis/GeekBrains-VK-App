@@ -10,37 +10,19 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-    
-    struct UserList {
-        let letter: String
-        let users: [User]
-    }
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // Variables
-    var users = [
-        User(firstName: "Keanu", lastName: "Reeves", bidthDay: nil, avatar: #imageLiteral(resourceName: "hipster"), photos: [#imageLiteral(resourceName: "KeanuReeves1"), #imageLiteral(resourceName: "KeanuReeves2"), #imageLiteral(resourceName: "keanu3"), #imageLiteral(resourceName: "keanu4"), #imageLiteral(resourceName: "keanu5")]),
-        User(firstName: "John", lastName: "Travolta", bidthDay: nil, avatar: #imageLiteral(resourceName: "beard"), photos: [#imageLiteral(resourceName: "Travolta3"), #imageLiteral(resourceName: "Travolta2"), #imageLiteral(resourceName: "Travolta1")]),
-        User(firstName: "Johnny", lastName: "Depp", bidthDay: nil, avatar: #imageLiteral(resourceName: "man"), photos: [#imageLiteral(resourceName: "Johnny3"), #imageLiteral(resourceName: "Jonny2"), #imageLiteral(resourceName: "Jonny1")]),
-        User(firstName: "Matthew", lastName: "McConaughey", bidthDay: nil, avatar: #imageLiteral(resourceName: "profile"), photos: [#imageLiteral(resourceName: "Mat1"), #imageLiteral(resourceName: "Mat2"), #imageLiteral(resourceName: "Mat3")]),
-        User(firstName: "Benedict", lastName: "Cumberbatch", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "Daniel", lastName: "Radcliffe", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "Leonardo", lastName: "DiCaprio", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "Michael", lastName: "Fassbender", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "Tom", lastName: "Hardy", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "Elijah", lastName: "Wood", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "Edward", lastName: "Norton", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "War", lastName: "War", bidthDay: nil, avatar: nil, photos: []),
-        User(firstName: "WWW", lastName: "WWewq", bidthDay: nil, avatar: nil, photos: [])
-    ]
-    
     var sortedUserList: [UserList] = []
-    
-    
+    var searchedUsers: [UserList] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        
         sortedUserList = map(input: users)
+        searchedUsers = sortedUserList
     }
     
     
@@ -67,27 +49,27 @@ class FriendsTableViewController: UITableViewController {
                 }
             }
             i += userOne.count
+            if i == input.count {
+                output.append(UserList(letter: letter, users: userOne))
+            }
         }
         return output
     }
     
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sortedUserList[section].letter
+    // MARK: - Table View Data Source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return searchedUsers.count
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return sortedUserList.count
-    }
-    // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedUserList[section].users.count
+        return searchedUsers[section].users.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
         
-        let user = sortedUserList[indexPath.section].users[indexPath.row]
+        let user = searchedUsers[indexPath.section].users[indexPath.row]
         cell.configure(from: user)
         
         return cell
@@ -97,9 +79,16 @@ class FriendsTableViewController: UITableViewController {
     //MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .delete {
-            users.remove(at: indexPath.row)
+        switch editingStyle {
+        case .delete:
+            searchedUsers[indexPath.section].users.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            // C удалением секции вопрос открыт
+            //            if searchedUsers[indexPath.section].users.isEmpty {
+            //                tableView.deleteSections(<#T##sections: IndexSet##IndexSet#>, with: .fade)
+        //            }
+        default:
+            return
         }
     }
     
@@ -111,24 +100,50 @@ class FriendsTableViewController: UITableViewController {
         return 90
     }
     
+    // Header
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return searchedUsers[section].letter
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = #colorLiteral(red: 0.3730736971, green: 0.5612065196, blue: 0.8904624581, alpha: 1)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.darkGray
+    }
+    
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showFriendPhotos" {
             
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            //            guard let section = tableView.numberOfRows(inSection: ind) else {
-            //                return
-            //            }
             
             guard let destination = segue.destination as? FriendsCollectionViewController else {
                 return
             }
-            let user = sortedUserList[indexPath.section].users[indexPath.row]
+            
+            let user = searchedUsers[indexPath.section].users[indexPath.row]
             
             destination.user = user
             destination.name = "\(user.firstName) \(user.lastName)"
         }
     }
+}
+
+extension FriendsTableViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let text = searchBar.text else { return }
+        
+        if text.isEmpty {
+            searchedUsers = sortedUserList
+        } else {
+            searchedUsers = sortedUserList.filter({ (userList) -> Bool in
+                return userList.users.contains { (user) -> Bool in
+                    return user.firstName.contains(text)
+                }
+            })
+        }
+        tableView.reloadData()
+    }
 }

@@ -11,14 +11,6 @@ import UIKit
 class MyGroupsController: UITableViewController {
     
     
-    // Variables
-    var demoGroups = [
-        Group(name: "Marvel", avatar: #imageLiteral(resourceName: "marvel"), description: nil, subscribers: 489500),
-        Group(name: "Swift Developers", avatar: #imageLiteral(resourceName: "swift"), description: nil, subscribers: 1430),
-        Group(name: "Anime Party", avatar: #imageLiteral(resourceName: "totoro"), description: nil, subscribers: 8700),
-        Group(name: "Active Sport", avatar: #imageLiteral(resourceName: "medal"), description: nil, subscribers: 127546)
-    ]
-    
     // MARK: - Table View Data Sours
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demoGroups.count
@@ -55,10 +47,9 @@ class MyGroupsController: UITableViewController {
         guard let avaliableGroupVC = unwindSegue.source as? AvalibleGroupController else { return }
         
         if let indexPath = avaliableGroupVC.tableView.indexPathForSelectedRow {
-            let group = avaliableGroupVC.demoGroups[indexPath.row]
+            let group = avaliableGroups[indexPath.row]
             if !demoGroups.contains(group) {
                 demoGroups.append(group)
-                
             } else {
                 Alert.showBasicAlert(on: self, with: "Внимание!",
                                      massage: "Вы уже состоите в данной группе.")
