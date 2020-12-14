@@ -58,7 +58,6 @@ class MyGroupsController: UITableViewController {
             let group = avaliableGroupVC.demoGroups[indexPath.row]
             if !demoGroups.contains(group) {
                 demoGroups.append(group)
-                
             } else {
                 Alert.showBasicAlert(on: self, with: "Внимание!",
                                      massage: "Вы уже состоите в данной группе.")
